@@ -1,0 +1,29 @@
+//altere os valores para resultados diferentes
+const vitorias = 63;
+const derrotas = 17;
+
+let saldoRankeadas = 0;
+let nivel = "Indefinido";
+
+calcularRankeada(vitorias, derrotas);
+
+function calcularRankeada(vitorias, derrotas) {
+    saldoRankeadas = vitorias - derrotas;
+
+    if (saldoRankeadas <= 10)
+        nivel = "Ferro";
+    else if (saldoRankeadas > 10 && saldoRankeadas <= 20)
+        nivel = "Bronze";
+    else if (saldoRankeadas > 20 && saldoRankeadas <= 50)
+        nivel = "Prata";
+    else if (saldoRankeadas > 50 && saldoRankeadas <= 80)
+        nivel = "Ouro";
+    else if (saldoRankeadas > 80 && saldoRankeadas <= 90)
+        nivel = "Diamante";
+    else if (saldoRankeadas > 90 && saldoRankeadas <= 100)
+        nivel = "Lendário";
+    else if (saldoRankeadas > 100)
+        nivel = "Imortal";
+}
+
+console.log("O Herói tem saldo de vitórias " + saldoRankeadas + " e está no nível " + nivel);
